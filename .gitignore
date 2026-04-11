@@ -1,0 +1,15 @@
+# Ignorar todo lo que genere el compilador en bin
+bin/
+
+# Ignorar archivos de configuración del IDE
+fp.cfg
+fp.dsk
+fp.ini
+
+# Ignorar archivos temporales
+*.o
+*.ppu
+*.bak
+
+# Mantener configuración del editor
+# .vscode/
