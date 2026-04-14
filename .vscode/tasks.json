@@ -5,7 +5,7 @@
             "label": "Compilar y Ejecutar Pascal",
             "type": "shell",
             // "-FEbin" le indica a fpc que guarde el ejecutable en /bin
-            "command": "mkdir -p bin && fpc -FEbin '${file}' && ./bin/'${fileBasenameNoExtension}'",
+            "command": "mkdir -p bin && fpc -FEbin '${file}' && clear && ./bin/'${fileBasenameNoExtension}'",
             "group": {
                 "kind": "build",
                 "isDefault": true
