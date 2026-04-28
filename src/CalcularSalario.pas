@@ -12,7 +12,7 @@ Seguro social obligatorio 9%
 
 program CalcularSalario;
 
-uses crt, sysutils, dateutils;
+uses crt;
 
 const 
 SALARIO_BASE = 50.00;
@@ -99,8 +99,8 @@ begin
 
     salarioBruto := SALARIO_BASE + totalBonoAlimentacion + totalPrimaHijo + totalHorasExtras;
 
-    totalLeyHabitacional := LEY_POLITICA_HABITACIONAL * salarioBruto;
-    totalSeguroSocial := SEGURO_SOCIAL_OBLIGATORIO * salarioBruto;
+    totalLeyHabitacional := LEY_POLITICA_HABITACIONAL * SALARIO_BASE;
+    totalSeguroSocial := SEGURO_SOCIAL_OBLIGATORIO * SALARIO_BASE;
 
     salarioNeto := salarioBruto - totalLeyHabitacional - totalSeguroSocial;
 
