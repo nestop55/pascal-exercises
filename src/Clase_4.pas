@@ -5,7 +5,7 @@ Realice un programa que lea un intervalo de numeros, determine cuales numeros so
 y calcule el promedio de los numeros perfectos
 }
 
-Program Clase4;
+Program Clase_4;
 
 Uses crt;
 
