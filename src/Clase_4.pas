@@ -1,5 +1,8 @@
 
 
+
+
+
 {
 Realice un programa que lea un intervalo de numeros, determine cuales numeros son perfectos 
 y calcule el promedio de los numeros perfectos
@@ -23,20 +26,54 @@ Begin
   write('Digite el final intervalo: ');
   readln(fin);
 
-  For i := inicio To fin Do
+  If (inicio <= fin) Then
     Begin
-      cont := 0;
 
-      For j := 1 To (i - 1) Do
+      For i := inicio To fin Do
         Begin
-          If (i Mod j) = 0 Then
-            cont := cont + j;
+          cont := 0;
+
+          If (i <= 0) Then
+            continue;
+
+          For j := 1 To (i - 1) Do
+            Begin
+              If (i Mod j) = 0 Then
+                cont := cont + j;
+            End;
+
+          If (cont = i) Then
+            Begin
+              promedio := promedio + i;
+              nPerfectos := nPerfectos + 1;
+            End;
+
         End;
 
-      If (cont = i) And (i <> 0) Then
+    End
+
+  Else
+    Begin
+
+      For i := inicio Downto fin Do
         Begin
-          promedio := promedio + i;
-          nPerfectos := nPerfectos + 1;
+          cont := 0;
+
+          If (i <= 0) Then
+            continue;
+
+          For j := 1 To (i - 1) Do
+            Begin
+              If (i Mod j) = 0 Then
+                cont := cont + j;
+            End;
+
+          If (cont = i) Then
+            Begin
+              promedio := promedio + i;
+              nPerfectos := nPerfectos + 1;
+            End;
+
         End;
 
     End;
@@ -47,6 +84,6 @@ Begin
       writeln('El promedio de los numeros perfectos es: ', promedio:0:2);
     End
   Else
-    writeln('No se encontraron numeros perfectos en ese rango.');
+    writeln('No se encontraron numeros perfectos en ese intervalo.');
 
 End.
